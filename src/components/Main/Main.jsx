@@ -1,13 +1,5 @@
-import styled from 'styled-components';
 import {Container} from '../Container/Container';
-
-const Wrapper = styled.main`
-    padding: 20px 0;
-
-    @media screen and (min-width: 767px) {
-      padding: 40px 0;
-    }
-`;
+import { Wrapper } from './Wrapper';
 
 const Main = ({children}) => {
     return (

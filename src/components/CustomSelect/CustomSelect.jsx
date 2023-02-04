@@ -3,7 +3,7 @@ import Select from 'react-select';
 
 export const CustomSelect = styled(Select).attrs({
     styles: {
-        control: (provided, state) => ({
+        control: (provided) => ({
             ...provided,
             padding: '9px 9px',
             border: 'none',
@@ -12,11 +12,12 @@ export const CustomSelect = styled(Select).attrs({
             color: 'var(--color-text)',
             backgroundColor: 'var(--color-ui)',
             boxShadow: 'var(--shadow)',
+            cursor: 'pointer',
         }),
         option: (provided, state) => ({
             ...provided,
             color: 'var(--color-text)',
-            backgroundColor: state.isSelected ? 'var(--color-bg)' : 'var(--color-ui)',
+            backgroundColor: state.isSelected || state.isFocused ? 'var(--color-bg)' : 'var(--color-ui)',
             cursor: 'pointer',
         })
     },

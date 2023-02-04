@@ -1,17 +1,11 @@
-import styled from 'styled-components';
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
 import { Container } from '../Container/Container';
-import {ThemeMode} from '../../const';
+import { ThemeMode } from '../../const';
 import { useThemeSwitcher } from '../../hooks/useThemeSwitcher';
-import {HeaderInner} from './HeaderInner';
-import {HeaderTitle} from './HeaderTitle';
-import {ThemeSwitcher} from './ThemeSwitcher';
-
-const HeaderElement = styled.header`
-    padding: 20px 0;
-    background-color: var(--color-ui);
-    box-shadow: var(--shadow);
-`;
+import { HeaderElement } from './HeaderElement';
+import { HeaderInner } from './HeaderInner';
+import { HeaderTitle } from './HeaderTitle';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 const Header = () => {
     const [theme, setTheme] = useThemeSwitcher();
@@ -22,7 +16,7 @@ const Header = () => {
         <HeaderElement>
             <Container>
                 <HeaderInner>
-                    <HeaderTitle>Where in the world?</HeaderTitle>
+                    <HeaderTitle to="/">Where in the world?</HeaderTitle>
                     <ThemeSwitcher onClick={toggleTheme}>
                         {`${theme} mode`}
                         {theme === ThemeMode.Light

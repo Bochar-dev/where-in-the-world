@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import Search from '../Search/Search';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
+import { setFilteredCountries } from '../../store/countries/countriesSlice';
+import { ControllsWrapper } from './ControllsWrapper';
 
 const options = [
     {value: 'Africa', label: 'Africa'},
@@ -11,21 +13,18 @@ const options = [
     {value: 'Oceania', label: 'Oceania'},
 ];
 
-const ControllsWrapper = styled.div`
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-
-    @media screen and (min-width: 767px) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-`;
-
 const Controlls = () => {
     const [search, setSearch] = useState('');
     const [region, setRegion] = useState('');
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const searchVal = search;
+        const regionVal = region ? region.value : '';
+
+        dispatch(setFilteredCountries({searchVal, regionVal}));
+    }, [search, region, dispatch]);
 
     return (
         <ControllsWrapper>
