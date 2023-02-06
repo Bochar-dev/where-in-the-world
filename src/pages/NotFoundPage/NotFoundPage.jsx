@@ -1,8 +1,8 @@
-
+import NotFoundContent from '../../components/NotFoundContent/NotFoundContent';
 
 const NotFoundPage = () => {
     return (
-        <div>NotFoundPage</div>
+        <NotFoundContent />
     );
 };
 
