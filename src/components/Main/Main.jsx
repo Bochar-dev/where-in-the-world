@@ -1,4 +1,4 @@
-import {Container} from '../Container/Container';
+import { Container } from '../Container/Container';
 import { Wrapper } from './Wrapper';
 
 const Main = ({children}) => {

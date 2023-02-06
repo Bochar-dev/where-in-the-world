@@ -1,12 +1,10 @@
-const BACKEND_URL = 'https://restcountries.com/v2/';
-
 export const PREV_PAGE = -1;
 
-export const ALL_COUNTRIES = BACKEND_URL + 'all?fields=name,capital,flags,population,region';
+export const VISABLE_COUNTRIES_COUNT = 8;
 
-export const searchByCountry = (name) => BACKEND_URL + 'name/' + name;
+export const VISABLE_COUNTRIES_STEP = 8;
 
-export const filterByCode = (codes) => BACKEND_URL + 'alpha?codes=' + codes.join(',');
+export const DEBOUNCE_TIMEOUT_MS = 500;
 
 export const ThemeMode = {
     Light: 'light',

@@ -22,6 +22,7 @@ export const useThemeSwitcher = () => {
 
     useEffect(() => {
         setCurrentTheme(theme);
+
         document.body.setAttribute('data-theme', theme);
     }, [theme]);
 

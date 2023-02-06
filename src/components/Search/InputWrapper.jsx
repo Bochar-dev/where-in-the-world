@@ -4,7 +4,7 @@ export const InputWrapper = styled.label`
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding: 15px 25px;
     border-radius: var(--radius);
     width: 100%;

@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace, Status } from '../../const';
-import { fetchCountriesAction, fetchCountryDetailAction } from '../apiActions';
+import { fetchCountriesAction, fetchCountryDetailAction, fetchCountriesCodeAction } from '../apiActions';
 
 const initialState = {
     countries: [],
     filteredCountries: [],
+    borderCountries: [],
     countryDetail: null,
     status: null,
+    errorMessage: null,
 };
 
 export const countriesSlice = createSlice({
@@ -32,21 +34,34 @@ export const countriesSlice = createSlice({
         [fetchCountriesAction.fulfilled]: (state, action) => {
             state.status = Status.Fulfilled;
             state.countries = action.payload;
-            state.filteredCountries = action.payload;
+            state.filteredCountries = action.payload.slice(0, state.countiesCount);
         },
-        [fetchCountriesAction.rejected]: (state) => {
+        [fetchCountriesAction.rejected]: (state, action) => {
             state.status = Status.Rejected;
+            state.errorMessage = action.payload;
         },
-        // [fetchCountryDetailAction.pending]: (state) => {
-        //     state.status = Status.Pending;
-        // },
-        // [fetchCountryDetailAction.fulfilled]: (state, action) => {
-        //     state.status = Status.Fulfilled;
-        //     state.countryDetail = action.payload;
-        // },
-        // [fetchCountryDetailAction.rejected]: (state) => {
-        //     state.status = Status.Rejected;
-        // },
+        [fetchCountryDetailAction.pending]: (state) => {
+            state.status = Status.Pending;
+        },
+        [fetchCountryDetailAction.fulfilled]: (state, action) => {
+            state.status = Status.Fulfilled;
+            state.countryDetail = action.payload;
+        },
+        [fetchCountryDetailAction.rejected]: (state, action) => {
+            state.status = Status.Rejected;
+            state.errorMessage = action.payload;
+        },
+        [fetchCountriesCodeAction.pending]: (state) => {
+            state.status = Status.Pending;
+        },
+        [fetchCountriesCodeAction.fulfilled]: (state, action) => {
+            state.status = Status.Fulfilled;
+            state.borderCountries = action.payload;
+        },
+        [fetchCountriesCodeAction.rejected]: (state, action) => {
+            state.status = Status.Rejected;
+            state.errorMessage = action.payload;
+        },
     }
 });
 

@@ -1,7 +1,7 @@
 import { IoArrowBack } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
-import {PREV_PAGE} from '../../const';
-import {ButtonBackElement} from './ButtonBackElement';
+import { PREV_PAGE } from '../../const';
+import { ButtonBackElement} from './ButtonBackElement';
 
 
 const ButtonBack = () => {

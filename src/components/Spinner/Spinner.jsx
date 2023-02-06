@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 
 export const SpinnerWrapper = styled.div`
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
 `;
 
 export const SpinnerElement = styled.div`
-    margin: 0 auto;
     border: 5px solid var(--color-text);
     border-bottom: 5px solid var(--color-bg);
     border-radius: 50%;

@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import Search from '../Search/Search';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import { setFilteredCountries } from '../../store/countries/countriesSlice';
+import { useDebounce } from '../../hooks/useDebounce';
+import { DEBOUNCE_TIMEOUT_MS } from '../../const';
 import { ControllsWrapper } from './ControllsWrapper';
 
 const options = [
@@ -18,13 +20,14 @@ const Controlls = () => {
     const [region, setRegion] = useState('');
 
     const dispatch = useDispatch();
+    const debouncedSearchValue = useDebounce(search, DEBOUNCE_TIMEOUT_MS);
 
     useEffect(() => {
-        const searchVal = search;
+        const searchVal = debouncedSearchValue;
         const regionVal = region ? region.value : '';
 
         dispatch(setFilteredCountries({searchVal, regionVal}));
-    }, [search, region, dispatch]);
+    }, [debouncedSearchValue, search, region, dispatch]);
 
     return (
         <ControllsWrapper>
