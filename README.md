@@ -2,7 +2,7 @@
 
 Проект доступен со ссылке [https://where-in-the-world-git-main-bochar-cloud.vercel.app/](https://where-in-the-world-git-main-bochar-cloud.vercel.app/)
 
-В проекте ипользуются следующие технологии:
+## В проекте ипользуются следующие технологии:
 
 -   react
 -   react route dom
@@ -12,5 +12,6 @@
 -   axios
 -   react-icons
 
-Превью проекта:
+## Превью проекта:
+
 ![](https://i.ibb.co/ScdCTy9/sreen-where-in-the-world.jpg)
