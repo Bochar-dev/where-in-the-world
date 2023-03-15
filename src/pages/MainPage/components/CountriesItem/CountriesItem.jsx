@@ -1,7 +1,6 @@
-import { Wrapper, Imgage, Content, Title, ContentList, ContentItem } from './styles';
+import { Wrapper, WrapperInner, Image, Content, Title, ContentList, ContentItem } from './styles';
 
 const CountriesItem = ({country}) => {
-
     const {
         capital,
         flags,
@@ -12,15 +11,17 @@ const CountriesItem = ({country}) => {
 
     return (
         <Wrapper>
-            <Imgage src={flags.svg}></Imgage>
-            <Content>
-                <Title>{name}</Title>
-                <ContentList>
-                    <ContentItem>Population: {population}</ContentItem>
-                    <ContentItem>Region: {region}</ContentItem>
-                    <ContentItem>Capital: {capital}</ContentItem>
-                </ContentList>
-            </Content>
+            <WrapperInner to="/">
+                <Image src={flags.svg} />
+                <Content>
+                    <Title>{name}</Title>
+                    <ContentList>
+                        <ContentItem>Population: {population}</ContentItem>
+                        <ContentItem>Region: {region}</ContentItem>
+                        <ContentItem>Capital: {capital}</ContentItem>
+                    </ContentList>
+                </Content>
+            </WrapperInner>
         </Wrapper>
     );
 };

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.li`
     overflow: hidden;
@@ -7,7 +8,11 @@ export const Wrapper = styled.li`
     box-shadow: var(--shadow);
 `;
 
-export const Imgage = styled.img`
+export const WrapperInner = styled(Link)`
+    text-decoration: none;
+`;
+
+export const Image = styled.img`
     display: block;
     aspect-ratio: 16 / 9;
     width: 100%;

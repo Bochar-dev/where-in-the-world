@@ -6,7 +6,7 @@ import { DEBOUNCE_TIMEOUT_MS } from '../../../../const';
 import CustomSelect from '../../../../components/CustomSelect/CustomSelect';
 import Search from '../../../../components/Search/Search';
 import { Wrapper } from './styles';
-import { options } from './constants';
+import { options } from './constants/options';
 
 const Controls = () => {
     const [search, setSearch] = useState('');
