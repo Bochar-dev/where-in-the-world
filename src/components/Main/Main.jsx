@@ -1,4 +1,4 @@
-import { Container } from '../Container/Container';
+import { Container } from '../../styles/global';
 import { Wrapper } from './Wrapper';
 
 const Main = ({children}) => {

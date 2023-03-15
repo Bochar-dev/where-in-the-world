@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Select from 'react-select';
 
-export const CustomSelect = styled(Select).attrs({
+const CustomSelect = styled(Select).attrs({
     styles: {
         control: (provided) => ({
             ...provided,
@@ -39,3 +39,5 @@ export const CustomSelect = styled(Select).attrs({
         background-color: var(--color-ui);
     }
 `;
+
+export default CustomSelect;

@@ -35,6 +35,8 @@ export const countriesSlice = createSlice({
             state.status = Status.Fulfilled;
             state.countries = action.payload;
             state.filteredCountries = action.payload.slice(0, state.countiesCount);
+
+            console.log(state.countries);
         },
         [fetchCountriesAction.rejected]: (state, action) => {
             state.status = Status.Rejected;

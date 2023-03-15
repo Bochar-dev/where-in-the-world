@@ -1,21 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Search from '../Search/Search';
-import { CustomSelect } from '../CustomSelect/CustomSelect';
-import { setFilteredCountries } from '../../store/countries/countriesSlice';
-import { useDebounce } from '../../hooks/useDebounce';
-import { DEBOUNCE_TIMEOUT_MS } from '../../const';
-import { ControllsWrapper } from './ControllsWrapper';
+import { setFilteredCountries } from '../../../../store/countries/countriesSlice';
+import { useDebounce } from '../../../../hooks/useDebounce';
+import { DEBOUNCE_TIMEOUT_MS } from '../../../../const';
+import CustomSelect from '../../../../components/CustomSelect/CustomSelect';
+import Search from '../../../../components/Search/Search';
+import { Wrapper } from './styles';
+import { options } from './constants';
 
-const options = [
-    {value: 'Africa', label: 'Africa'},
-    {value: 'America', label: 'America'},
-    {value: 'Asia', label: 'Asia'},
-    {value: 'Europe', label: 'Europe'},
-    {value: 'Oceania', label: 'Oceania'},
-];
-
-const Controlls = () => {
+const Controls = () => {
     const [search, setSearch] = useState('');
     const [region, setRegion] = useState('');
 
@@ -30,8 +23,8 @@ const Controlls = () => {
     }, [debouncedSearchValue, search, region, dispatch]);
 
     return (
-        <ControllsWrapper>
-            <Search search={search} setSearch={setSearch}/>
+        <Wrapper>
+            <Search search={search} setSearch={setSearch} />
             <CustomSelect
                 options={options}
                 placeholder="Filter by Region"
@@ -40,8 +33,8 @@ const Controlls = () => {
                 value={region}
                 onChange={setRegion}
             />
-        </ControllsWrapper>
+        </Wrapper>
     );
 };
 
-export default Controlls;
+export default Controls;

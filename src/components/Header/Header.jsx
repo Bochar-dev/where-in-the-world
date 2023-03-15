@@ -1,11 +1,8 @@
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
-import { Container } from '../Container/Container';
+import { Container } from '../../styles/global';
 import { ThemeMode } from '../../const';
 import { useThemeSwitcher } from '../../hooks/useThemeSwitcher';
-import { HeaderElement } from './HeaderElement';
-import { HeaderInner } from './HeaderInner';
-import { HeaderTitle } from './HeaderTitle';
-import { ThemeSwitcher } from './ThemeSwitcher';
+import { Wrapper, InnerWrapper, Title, ThemeSwitcher } from './styles/';
 
 const Header = () => {
     const [theme, setTheme] = useThemeSwitcher();
@@ -13,19 +10,19 @@ const Header = () => {
     const toggleTheme = () => setTheme(theme === ThemeMode.Light ? ThemeMode.Dark : ThemeMode.Light);
 
     return (
-        <HeaderElement>
+        <Wrapper>
             <Container>
-                <HeaderInner>
-                    <HeaderTitle to="/">Where in the world?</HeaderTitle>
+                <InnerWrapper>
+                    <Title to="/">Where in the world?</Title>
                     <ThemeSwitcher onClick={toggleTheme}>
                         {`${theme} mode`}
                         {theme === ThemeMode.Light
                             ? <IoMoonOutline size="14px" />
                             : <IoMoon size="14px" />}
                     </ThemeSwitcher>
-                </HeaderInner>
+                </InnerWrapper>
             </Container>
-        </HeaderElement>
+        </Wrapper>
     );
 };
 
