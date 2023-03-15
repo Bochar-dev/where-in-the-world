@@ -11,7 +11,7 @@ const CountriesItem = ({country}) => {
 
     return (
         <Wrapper>
-            <WrapperInner to="/">
+            <WrapperInner to={`/country/${name}`}>
                 <Image src={flags.svg} />
                 <Content>
                     <Title>{name}</Title>
