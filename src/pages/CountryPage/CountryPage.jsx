@@ -7,27 +7,28 @@ import { Status } from '../../const';
 import Spinner from '../../components/Spinner/Spinner';
 import ButtonBack from '../../components/ButtonBack/ButtonBack';
 import CountryDetail from '../../components/CountryDetail/CountryDetail';
+import CountryInfo from './Components/CountryInfo/CountryInfo';
 
 const CardDetailPage = () => {
-    const { name } = useParams();
+    // const { name } = useParams();
 
-    const countryDetail = useSelector(getCountryDetail);
-    const status = useSelector(getStatus);
-    const errorMessage = useSelector(getErrorMessage);
+    // const countryDetail = useSelector(getCountryDetail);
+    // const status = useSelector(getStatus);
+    // const errorMessage = useSelector(getErrorMessage);
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchCountryDetailAction(name));
-    }, [name, dispatch]);
+    // useEffect(() => {
+    //     dispatch(fetchCountryDetailAction(name));
+    // }, [name, dispatch]);
 
     return (
         <>
             <ButtonBack />
-
-            {status === Status.Pending && <Spinner />}
+            <CountryInfo />
+            {/* {status === Status.Pending && <Spinner />}
             {status === Status.Rejected && errorMessage}
-            {countryDetail && <CountryDetail {...countryDetail} />}
+            {countryDetail && <CountryDetail {...countryDetail} />} */}
         </>
     );
 };

@@ -4,6 +4,7 @@ export const Button = styled.button`
     display: flex;
     align-items: center;
     gap: 10px;
+    margin: 0 0 40px 0;
     padding: 15px 30px;
     border: none;
     border-radius: var(--radius);
@@ -14,4 +15,8 @@ export const Button = styled.button`
     background-color: var(--color-ui);
     box-shadow: var(--shadow);
     cursor: pointer;
+
+    &:last-child {
+        margin: 0 0 40px 0;
+    }
 `;

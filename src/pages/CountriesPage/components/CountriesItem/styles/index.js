@@ -22,6 +22,7 @@ export const Image = styled.img`
 
 export const Content = styled.div`
     padding: 20px 15px;
+    color: var(--color-text);
 `;
 
 export const Title = styled.h2`

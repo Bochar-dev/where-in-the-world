@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
-import MainPage from './pages/MainPage/MainPage';
-import CardDetailPage from './pages/CardDetailPage/CardDetailPage';
+import CountriesPage from './pages/CountriesPage/CountriesPage';
+import CountryPage from './pages/CountryPage/CountryPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import { AppRoute } from './const';
 
@@ -14,11 +14,11 @@ const App = () => {
                 <Routes>
                     <Route
                         path={AppRoute.Home}
-                        element={<MainPage />}
+                        element={<CountriesPage />}
                     />
                     <Route
                         path={AppRoute.CardDetail}
-                        element={<CardDetailPage />}
+                        element={<CountryPage />}
                     />
                     <Route
                         path={AppRoute.NotFound}
